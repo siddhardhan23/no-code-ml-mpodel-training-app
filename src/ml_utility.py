@@ -81,7 +81,6 @@ def preprocess_data(df, target_column, scaler_type):
 
 # Step 3: Train the model
 def train_model(X_train, y_train, model, model_name):
-    print(model)
     # training the selected model
     model.fit(X_train, y_train)
     # saving the trained model

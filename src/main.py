@@ -2,8 +2,16 @@ import os
 
 import streamlit as st
 from streamlit_option_menu import option_menu
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
+from xgboost import XGBClassifier
 
-from ml_utility import *
+
+from ml_utility import (read_data,
+                        preprocess_data,
+                        train_model,
+                        evaluate_model)
 
 
 # Get the working directory of the main.py file
@@ -19,7 +27,7 @@ st.set_page_config(
     layout="centered")
 
 
-st.title("🤖 No Code ML model Training")
+st.title("🤖 No Code ML Model Training")
 
 dataset_list = os.listdir(f"{parent_dir}/data")
 
